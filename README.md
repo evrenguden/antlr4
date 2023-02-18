@@ -41,7 +41,7 @@ The default branch for this repo is [`master`](https://github.com/antlr/antlr4/t
 Targets such as Go that pull directly from the repository can use the default `master` branch but can also pull from the active `dev` branch:
 
 ```bash
-$ go get github.com/antlr/antlr4/runtime/Go/antlr@dev
+$ go get github.com/evrenguden/antlr4/runtime/Go/antlr@dev
 ```
 
 ## Authors and major contributors

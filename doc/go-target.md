@@ -24,13 +24,13 @@ $ go mod init mymodproject
 After which, you can use go get, to get the latest release version of the ANTLR v4 runtime using:
 
 ```bash
-go get github.com/antlr/antlr4/runtime/Go/antlr/v4
+go get github.com/evrenguden/antlr4/runtime/Go/antlr/v4
 ```
 
 If your project is already using the v4 runtime, then you can upgrade to the latest release using the usual:
 
 ```bash
-go get -u github.com/antlr/antlr4/runtime/Go/antlr/v4
+go get -u github.com/evrenguden/antlr4/runtime/Go/antlr/v4
 ```
 If you have not yet upgraded existing projects to the `/v4` module path, consult the section *Upgrading to v4
 from earlier versions*
@@ -119,7 +119,7 @@ that git tagging works with the ANTLR Go runtime.*
 
 Prior to release v4.11.0 the Go runtime shipped with a module but the module had no version path. This meant that
 the tags in the ANTLR repo did not work, as any tag above `v1` must refer to a matching module path. 
-So the command `go get github.com/antlr/antlr4/runtime/Go/antlr` would just bring in
+So the command `go get github.com/evrenguden/antlr4/runtime/Go/antlr` would just bring in
 whatever was the `HEAD` of the master branch. While this *kind of* worked, it is obviously subject to problems and does
 not fit properly with the idiomatic ways of Go.
 
@@ -136,7 +136,7 @@ A quick way to replace original module path references is to use this script fro
 ```shell
 find . -type f \
     -name '*.go' \
-    -exec sed -i -e 's,github.com/antlr/antlr4/runtime/Go/antlr,github.com/antlr/antlr4/runtime/Go/antlr/v4,g' {} \;
+    -exec sed -i -e 's,github.com/evrenguden/antlr4/runtime/Go/antlr,github.com/evrenguden/antlr4/runtime/Go/antlr/v4,g' {} \;
 ```
 After performing the steps above, issuing:
 
@@ -146,7 +146,7 @@ go mod tidy
 Should fix up your `go.mod` file to reference only the `v4` version of the ANTLR Go runtime:
 
 ```shell
-require github.com/antlr/antlr4/runtime/Go/antlr/v4 v4.11.0-xxxxxx-xxxxxxxxx
+require github.com/evrenguden/antlr4/runtime/Go/antlr/v4 v4.11.0-xxxxxx-xxxxxxxxx
 ```
 
 From this point on, your go mod commands will work correctly with the ANTLR repo and upgrades and downgrades will work
@@ -157,7 +157,7 @@ as you expect. As will branch version such as @dev
 You can reference the go ANTLR runtime package like this:
 
 ```golang
-import "github.com/antlr/antlr4/runtime/Go/antlr/v4"
+import "github.com/evrenguden/antlr4/runtime/Go/antlr/v4"
 ```
 
 ### Complete example
@@ -183,7 +183,7 @@ encountered `ParseTreeContext`'s. Assuming the generated parser code is in the `
 package main
 
 import (
-	"github.com/antlr/antlr4/runtime/Go/antlr/v4"
+	"github.com/evrenguden/antlr4/runtime/Go/antlr/v4"
 	"./parser"
 	"os"
 	"fmt"
