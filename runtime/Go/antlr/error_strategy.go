@@ -63,7 +63,7 @@ func (d *DefaultErrorStrategy) reset(recognizer Parser) {
 // This method is called to enter error recovery mode when a recognition
 // exception is Reported.
 //
-// @paramantlr recognizer the parser instance
+//	recognizer the parser instance
 func (d *DefaultErrorStrategy) beginErrorCondition(recognizer Parser) {
 	d.errorRecoveryMode = true
 }
@@ -75,7 +75,7 @@ func (d *DefaultErrorStrategy) InErrorRecoveryMode(recognizer Parser) bool {
 // This method is called to leave error recovery mode after recovering from
 // a recognition exception.
 //
-// @paramantlr recognizer
+//	recognizer
 func (d *DefaultErrorStrategy) endErrorCondition(recognizer Parser) {
 	d.errorRecoveryMode = false
 	d.lastErrorStates = nil
@@ -234,8 +234,8 @@ func (d *DefaultErrorStrategy) Sync(recognizer Parser) {
 //
 // @see //ReportError
 //
-// @paramantlr recognizer the parser instance
-// @paramantlr e the recognition exception
+//	recognizer the parser instance
+//	e the recognition exception
 func (d *DefaultErrorStrategy) ReportNoViableAlternative(recognizer Parser, e *NoViableAltException) {
 	tokens := recognizer.GetTokenStream()
 	var input string
@@ -257,8 +257,8 @@ func (d *DefaultErrorStrategy) ReportNoViableAlternative(recognizer Parser, e *N
 //
 // @see //ReportError
 //
-// @paramantlr recognizer the parser instance
-// @paramantlr e the recognition exception
+//	recognizer the parser instance
+//	e the recognition exception
 func (this *DefaultErrorStrategy) ReportInputMisMatch(recognizer Parser, e *InputMisMatchException) {
 	msg := "mismatched input " + this.GetTokenErrorDisplay(e.offendingToken) +
 		" expecting " + e.getExpectedTokens().StringVerbose(recognizer.GetLiteralNames(), recognizer.GetSymbolicNames(), false)
@@ -270,8 +270,8 @@ func (this *DefaultErrorStrategy) ReportInputMisMatch(recognizer Parser, e *Inpu
 //
 // @see //ReportError
 //
-// @paramantlr recognizer the parser instance
-// @paramantlr e the recognition exception
+//	recognizer the parser instance
+//	e the recognition exception
 func (d *DefaultErrorStrategy) ReportFailedPredicate(recognizer Parser, e *FailedPredicateException) {
 	ruleName := recognizer.GetRuleNames()[recognizer.GetParserRuleContext().GetRuleIndex()]
 	msg := "rule " + ruleName + " " + e.message
@@ -293,7 +293,7 @@ func (d *DefaultErrorStrategy) ReportFailedPredicate(recognizer Parser, e *Faile
 // enter error recovery mode, followed by calling
 // {@link Parser//NotifyErrorListeners}.</p>
 //
-// @paramantlr recognizer the parser instance
+//	recognizer the parser instance
 func (d *DefaultErrorStrategy) ReportUnwantedToken(recognizer Parser) {
 	if d.InErrorRecoveryMode(recognizer) {
 		return
@@ -321,7 +321,7 @@ func (d *DefaultErrorStrategy) ReportUnwantedToken(recognizer Parser) {
 // enter error recovery mode, followed by calling
 // {@link Parser//NotifyErrorListeners}.</p>
 //
-// @paramantlr recognizer the parser instance
+//	recognizer the parser instance
 func (d *DefaultErrorStrategy) ReportMissingToken(recognizer Parser) {
 	if d.InErrorRecoveryMode(recognizer) {
 		return
@@ -411,7 +411,8 @@ func (d *DefaultErrorStrategy) RecoverInline(recognizer Parser) Token {
 // {@code true}, the caller is responsible for creating and inserting a
 // token with the correct type to produce d behavior.</p>
 //
-// @paramantlr recognizer the parser instance
+//	recognizer the parser instance
+//
 // @return {@code true} if single-token insertion is a viable recovery
 // strategy for the current mismatched input, otherwise {@code false}
 func (d *DefaultErrorStrategy) SingleTokenInsertion(recognizer Parser) bool {
@@ -444,7 +445,8 @@ func (d *DefaultErrorStrategy) SingleTokenInsertion(recognizer Parser) bool {
 // before returning {@link //ReportMatch} is called to signal a successful
 // Match.</p>
 //
-// @paramantlr recognizer the parser instance
+//	recognizer the parser instance
+//
 // @return the successfully Matched {@link Token} instance if single-token
 // deletion successfully recovers from the mismatched input, otherwise
 // {@code nil}

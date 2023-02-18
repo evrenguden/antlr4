@@ -29,7 +29,8 @@ const (
 // <em>i</em> leads to a semantic predicate before Matching a symbol, the
 // element at index <em>i</em> of the result will be {@code nil}.
 //
-// @paramantlr s the ATN state
+//	s the ATN state
+//
 // @return the expected symbols for each outgoing transition of {@code s}.
 func (la *LL1Analyzer) getDecisionLookahead(s ATNState) []*IntervalSet {
 	if s == nil {
@@ -60,10 +61,13 @@ func (la *LL1Analyzer) getDecisionLookahead(s ATNState) []*IntervalSet {
 // If {@code ctx} is not {@code nil} and the end of the outermost rule is
 // reached, {@link Token//EOF} is added to the result set.</p>
 //
-// @paramantlr s the ATN state
-// @paramantlr stopState the ATN state to stop at. This can be a
+//	s the ATN state
+//	stopState the ATN state to stop at. This can be a
+//
 // {@link BlockEndState} to detect epsilon paths through a closure.
-// @paramantlr ctx the complete parser context, or {@code nil} if the context
+//
+//	ctx the complete parser context, or {@code nil} if the context
+//
 // should be ignored
 //
 // @return The set of tokens that can follow {@code s} in the ATN in the
@@ -90,23 +94,23 @@ func (la *LL1Analyzer) Look(s, stopState ATNState, ctx RuleContext) *IntervalSet
 // {@code true} and {@code stopState} or the end of the outermost rule is
 // reached, {@link Token//EOF} is added to the result set.</p>
 //
-// @paramantlr s the ATN state.
-// @paramantlr stopState the ATN state to stop at. This can be a
+//  s the ATN state.
+//  stopState the ATN state to stop at. This can be a
 // {@link BlockEndState} to detect epsilon paths through a closure.
-// @paramantlr ctx The outer context, or {@code nil} if the outer context should
+//  ctx The outer context, or {@code nil} if the outer context should
 // not be used.
-// @paramantlr look The result lookahead set.
-// @paramantlr lookBusy A set used for preventing epsilon closures in the ATN
+//  look The result lookahead set.
+//  lookBusy A set used for preventing epsilon closures in the ATN
 // from causing a stack overflow. Outside code should pass
 // {@code NewSet<ATNConfig>} for la argument.
-// @paramantlr calledRuleStack A set used for preventing left recursion in the
+//  calledRuleStack A set used for preventing left recursion in the
 // ATN from causing a stack overflow. Outside code should pass
 // {@code NewBitSet()} for la argument.
-// @paramantlr seeThruPreds {@code true} to true semantic predicates as
+//  seeThruPreds {@code true} to true semantic predicates as
 // implicitly {@code true} and "see through them", otherwise {@code false}
 // to treat semantic predicates as opaque and add {@link //HitPred} to the
 // result if one is encountered.
-// @paramantlr addEOF Add {@link Token//EOF} to the result if the end of the
+//  addEOF Add {@link Token//EOF} to the result if the end of the
 // outermost context is reached. This parameter has no effect if {@code ctx}
 // is {@code nil}.
 

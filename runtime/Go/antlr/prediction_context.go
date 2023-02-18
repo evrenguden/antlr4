@@ -456,11 +456,14 @@ func merge(a, b PredictionContext, rootIsWildcard bool, mergeCache *DoubleDict) 
 // <embed src="images/SingletonMerge_DiffRootDiffPar.svg"
 // type="image/svg+xml"/></p>
 //
-// @paramantlr a the first {@link SingletonBasePredictionContext}
-// @paramantlr b the second {@link SingletonBasePredictionContext}
-// @paramantlr rootIsWildcard {@code true} if this is a local-context merge,
+//	a the first {@link SingletonBasePredictionContext}
+//	b the second {@link SingletonBasePredictionContext}
+//	rootIsWildcard {@code true} if this is a local-context merge,
+//
 // otherwise false to indicate a full-context merge
-// @paramantlr mergeCache
+//
+//	mergeCache
+//
 // /
 func mergeSingletons(a, b *BaseSingletonPredictionContext, rootIsWildcard bool, mergeCache *DoubleDict) PredictionContext {
 	if mergeCache != nil {
@@ -572,9 +575,10 @@ func mergeSingletons(a, b *BaseSingletonPredictionContext, rootIsWildcard bool, 
 //
 // <p><embed src="images/FullMerge_SameRoot.svg" type="image/svg+xml"/></p>
 //
-// @paramantlr a the first {@link SingletonBasePredictionContext}
-// @paramantlr b the second {@link SingletonBasePredictionContext}
-// @paramantlr rootIsWildcard {@code true} if this is a local-context merge,
+//	a the first {@link SingletonBasePredictionContext}
+//	b the second {@link SingletonBasePredictionContext}
+//	rootIsWildcard {@code true} if this is a local-context merge,
+//
 // otherwise false to indicate a full-context merge
 // /
 func mergeRoot(a, b SingletonPredictionContext, rootIsWildcard bool) PredictionContext {
