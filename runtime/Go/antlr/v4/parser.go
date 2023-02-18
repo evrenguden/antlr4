@@ -128,7 +128,7 @@ func (p *BaseParser) SetErrorHandler(e ErrorStrategy) {
 // {@link ANTLRErrorStrategy//recoverInline} is -1, the symbol is added to
 // the parse tree by calling {@link ParserRuleContext//addErrorNode}.</p>
 //
-// @param ttype the token type to Match
+// @paramantlr ttype the token type to Match
 // @return the Matched symbol
 // @panics RecognitionException if the current input symbol did not Match
 // {@code ttype} and the error strategy could not recover from the
@@ -226,7 +226,7 @@ func (p *BaseParser) GetParseListeners() []ParseTreeListener {
 // may change the behavior of the listener calls.</li>
 // </ul>
 //
-// @param listener the listener to add
+// @paramantlr listener the listener to add
 //
 // @panics nilPointerException if {@code} listener is {@code nil}
 func (p *BaseParser) AddParseListener(listener ParseTreeListener) {
@@ -243,7 +243,7 @@ func (p *BaseParser) AddParseListener(listener ParseTreeListener) {
 //
 // <p>If {@code listener} is {@code nil} or has not been added as a parse
 // listener, p.method does nothing.</p>
-// @param listener the listener to remove
+// @paramantlr listener the listener to remove
 func (p *BaseParser) RemoveParseListener(listener ParseTreeListener) {
 
 	if p.parseListeners != nil {
@@ -580,7 +580,7 @@ func (p *BaseParser) inContext(context ParserRuleContext) bool {
 // return getExpectedTokens().contains(symbol)
 // </pre>
 //
-// @param symbol the symbol type to check
+// @paramantlr symbol the symbol type to check
 // @return {@code true} if {@code symbol} can follow the current state in
 // the ATN, otherwise {@code false}.
 

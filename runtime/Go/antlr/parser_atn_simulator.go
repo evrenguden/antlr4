@@ -283,8 +283,8 @@ func (p *ParserATNSimulator) execATN(dfa *DFA, s0 *DFAState, input TokenStream, 
 // for the edge has not yet been computed or is otherwise not available,
 // p method returns {@code nil}.
 //
-// @param previousD The current DFA state
-// @param t The next input symbol
+// @paramantlr previousD The current DFA state
+// @paramantlr t The next input symbol
 // @return The existing target DFA state for the given input symbol
 // {@code t}, or {@code nil} if the target state for p edge is not
 // already cached
@@ -306,9 +306,9 @@ func (p *ParserATNSimulator) getExistingTargetState(previousD *DFAState, t int) 
 // Compute a target state for an edge in the DFA, and attempt to add the
 // computed state and corresponding edge to the DFA.
 //
-// @param dfa The DFA
-// @param previousD The current DFA state
-// @param t The next input symbol
+// @paramantlr dfa The DFA
+// @paramantlr previousD The current DFA state
+// @paramantlr t The next input symbol
 //
 // @return The computed target DFA state for the given input symbol
 // {@code t}. If {@code t} does not lead to a valid DFA state, p method
@@ -625,8 +625,8 @@ func (p *ParserATNSimulator) computeReachSet(closure ATNConfigSet, t int, fullCt
 // not already in a rule stop state to see if a rule stop state is reachable
 // from the configuration via epsilon-only transitions.</p>
 //
-// @param configs the configuration set to update
-// @param lookToEndOfRule when true, p method checks for rule stop states
+// @paramantlr configs the configuration set to update
+// @paramantlr lookToEndOfRule when true, p method checks for rule stop states
 // reachable by epsilon-only transitions from each configuration in
 // {@code configs}.
 //
@@ -716,7 +716,7 @@ func (p *ParserATNSimulator) computeStartState(a ATNState, ctx RuleContext, full
 // from being eliminated by the filter.
 // </p>
 //
-// @param configs The configuration set computed by
+// @paramantlr configs The configuration set computed by
 // {@link //computeStartState} as the start state for the DFA.
 // @return The transformed configuration set representing the start state
 // for a precedence DFA at a particular precedence level (determined by
@@ -854,9 +854,9 @@ func (p *ParserATNSimulator) getPredicatePredictions(ambigAlts *BitSet, altToPre
 // in semantic predicates.
 // </p>
 //
-// @param configs The ATN configurations which were valid immediately before
+// @paramantlr configs The ATN configurations which were valid immediately before
 // the {@link //ERROR} state was reached
-// @param outerContext The is the \gamma_0 initial parser context from the paper
+// @paramantlr outerContext The is the \gamma_0 initial parser context from the paper
 // or the parser stack at the instant before prediction commences.
 //
 // @return The value to return from {@link //AdaptivePredict}, or
@@ -1437,10 +1437,10 @@ func (p *ParserATNSimulator) getUniqueAlt(configs ATNConfigSet) int {
 // Otherwise, p method returns the {@link DFAState} returned by calling
 // {@link //addDFAState} for the {@code to} state.</p>
 //
-// @param dfa The DFA
-// @param from The source state for the edge
-// @param t The input symbol
-// @param to The target state for the edge
+// @paramantlr dfa The DFA
+// @paramantlr from The source state for the edge
+// @paramantlr t The input symbol
+// @paramantlr to The target state for the edge
 //
 // @return If {@code to} is {@code nil}, p method returns {@code nil}
 // otherwise p method returns the result of calling {@link //addDFAState}
@@ -1484,8 +1484,8 @@ func (p *ParserATNSimulator) addDFAEdge(dfa *DFA, from *DFAState, t int, to *DFA
 // <p>If {@code D} is {@link //ERROR}, p method returns {@link //ERROR} and
 // does not change the DFA.</p>
 //
-// @param dfa The dfa
-// @param D The DFA state to add
+// @paramantlr dfa The dfa
+// @paramantlr D The DFA state to add
 // @return The state stored in the DFA. This will be either the existing
 // state if {@code D} is already in the DFA, or {@code D} itself if the
 // state was not already present.

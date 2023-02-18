@@ -197,7 +197,7 @@ func PredictionModehasSLLConflictTerminatingPrediction(mode int, configs ATNConf
 // the end of the decision rule (local context) or end of start rule (full
 // context).
 //
-// @param configs the configuration set to test
+// @paramantlr configs the configuration set to test
 // @return {@code true} if any configuration in {@code configs} is in a
 // {@link RuleStopState}, otherwise {@code false}
 func PredictionModehasConfigInRuleStopState(configs ATNConfigSet) bool {
@@ -214,7 +214,7 @@ func PredictionModehasConfigInRuleStopState(configs ATNConfigSet) bool {
 // the end of the decision rule (local context) or end of start rule (full
 // context).
 //
-// @param configs the configuration set to test
+// @paramantlr configs the configuration set to test
 // @return {@code true} if all configurations in {@code configs} are in a
 // {@link RuleStopState}, otherwise {@code false}
 func PredictionModeallConfigsInRuleStopStates(configs ATNConfigSet) bool {
@@ -373,7 +373,7 @@ func PredictionModeresolvesToJustOneViableAlt(altsets []*BitSet) int {
 // Determines if every alternative subset in {@code altsets} contains more
 // than one alternative.
 //
-// @param altsets a collection of alternative subsets
+// @paramantlr altsets a collection of alternative subsets
 // @return {@code true} if every {@link BitSet} in {@code altsets} has
 // {@link BitSet//cardinality cardinality} &gt 1, otherwise {@code false}
 func PredictionModeallSubsetsConflict(altsets []*BitSet) bool {
@@ -383,7 +383,7 @@ func PredictionModeallSubsetsConflict(altsets []*BitSet) bool {
 // Determines if any single alternative subset in {@code altsets} contains
 // exactly one alternative.
 //
-// @param altsets a collection of alternative subsets
+// @paramantlr altsets a collection of alternative subsets
 // @return {@code true} if {@code altsets} contains a {@link BitSet} with
 // {@link BitSet//cardinality cardinality} 1, otherwise {@code false}
 func PredictionModehasNonConflictingAltSet(altsets []*BitSet) bool {
@@ -399,7 +399,7 @@ func PredictionModehasNonConflictingAltSet(altsets []*BitSet) bool {
 // Determines if any single alternative subset in {@code altsets} contains
 // more than one alternative.
 //
-// @param altsets a collection of alternative subsets
+// @paramantlr altsets a collection of alternative subsets
 // @return {@code true} if {@code altsets} contains a {@link BitSet} with
 // {@link BitSet//cardinality cardinality} &gt 1, otherwise {@code false}
 func PredictionModehasConflictingAltSet(altsets []*BitSet) bool {
@@ -414,7 +414,7 @@ func PredictionModehasConflictingAltSet(altsets []*BitSet) bool {
 
 // Determines if every alternative subset in {@code altsets} is equivalent.
 //
-// @param altsets a collection of alternative subsets
+// @paramantlr altsets a collection of alternative subsets
 // @return {@code true} if every member of {@code altsets} is equal to the
 // others, otherwise {@code false}
 func PredictionModeallSubsetsEqual(altsets []*BitSet) bool {
@@ -436,7 +436,7 @@ func PredictionModeallSubsetsEqual(altsets []*BitSet) bool {
 // {@code altsets}. If no such alternative exists, this method returns
 // {@link ATN//INVALID_ALT_NUMBER}.
 //
-// @param altsets a collection of alternative subsets
+// @paramantlr altsets a collection of alternative subsets
 func PredictionModegetUniqueAlt(altsets []*BitSet) int {
 	all := PredictionModeGetAlts(altsets)
 	if all.length() == 1 {
@@ -450,7 +450,7 @@ func PredictionModegetUniqueAlt(altsets []*BitSet) int {
 // alternative subsets. This method returns the union of each {@link BitSet}
 // in {@code altsets}.
 //
-// @param altsets a collection of alternative subsets
+// @paramantlr altsets a collection of alternative subsets
 // @return the set of represented alternatives in {@code altsets}
 func PredictionModeGetAlts(altsets []*BitSet) *BitSet {
 	all := NewBitSet()

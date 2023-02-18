@@ -157,7 +157,7 @@ func NewCommonToken(source *TokenSourceCharStreamPair, tokenType, channel, start
 // will be constructed from the result of {@link Token//GetTokenSource} and
 // {@link Token//GetInputStream}.</p>
 //
-// @param oldToken The token to copy.
+// @paramantlr oldToken The token to copy.
 func (c *CommonToken) clone() *CommonToken {
 	t := NewCommonToken(c.source, c.tokenType, c.channel, c.start, c.stop)
 	t.tokenIndex = c.GetTokenIndex()

@@ -198,8 +198,8 @@ func (l *LexerATNSimulator) execATN(input CharStream, ds0 *DFAState) int {
 // for the edge has not yet been computed or is otherwise not available,
 // l method returns {@code nil}.
 //
-// @param s The current DFA state
-// @param t The next input symbol
+// @paramantlr s The current DFA state
+// @paramantlr t The next input symbol
 // @return The existing target DFA state for the given input symbol
 // {@code t}, or {@code nil} if the target state for l edge is not
 // already cached
@@ -223,9 +223,9 @@ func (l *LexerATNSimulator) getExistingTargetState(s *DFAState, t int) *DFAState
 // Compute a target state for an edge in the DFA, and attempt to add the
 // computed state and corresponding edge to the DFA.
 //
-// @param input The input stream
-// @param s The current DFA state
-// @param t The next input symbol
+// @paramantlr input The input stream
+// @paramantlr s The current DFA state
+// @paramantlr t The next input symbol
 //
 // @return The computed target DFA state for the given input symbol
 // {@code t}. If {@code t} does not lead to a valid DFA state, l method
@@ -487,10 +487,10 @@ func (l *LexerATNSimulator) getEpsilonTarget(input CharStream, config *LexerATNC
 // to the original state before returning (i.e. undo the actions made by the
 // call to {@link //consume}.</p>
 //
-// @param input The input stream.
-// @param ruleIndex The rule containing the predicate.
-// @param predIndex The index of the predicate within the rule.
-// @param speculative {@code true} if the current index in {@code input} is
+// @paramantlr input The input stream.
+// @paramantlr ruleIndex The rule containing the predicate.
+// @paramantlr predIndex The index of the predicate within the rule.
+// @paramantlr speculative {@code true} if the current index in {@code input} is
 // one character before the predicate's location.
 //
 // @return {@code true} if the specified predicate evaluates to

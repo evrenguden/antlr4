@@ -91,9 +91,9 @@ func (d *DiagnosticErrorListener) getDecisionDescription(recognizer Parser, dfa 
 // configuration set, if that information was not already provided by the
 // parser.
 //
-// @param ReportedAlts The set of conflicting or ambiguous alternatives, as
+// @paramantlr ReportedAlts The set of conflicting or ambiguous alternatives, as
 // Reported by the parser.
-// @param configs The conflicting or ambiguous configuration set.
+// @paramantlr configs The conflicting or ambiguous configuration set.
 // @return Returns {@code ReportedAlts} if it is not {@code nil}, otherwise
 // returns the set of alternatives represented in {@code configs}.
 func (d *DiagnosticErrorListener) getConflictingAlts(ReportedAlts *BitSet, set ATNConfigSet) *BitSet {

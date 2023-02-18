@@ -278,9 +278,9 @@ func (l *LexerModeAction) String() string {
 // Constructs a custom lexer action with the specified rule and action
 // indexes.
 //
-// @param ruleIndex The rule index to use for calls to
+// @paramantlr ruleIndex The rule index to use for calls to
 // {@link Recognizer//action}.
-// @param actionIndex The action index to use for calls to
+// @paramantlr actionIndex The action index to use for calls to
 // {@link Recognizer//action}.
 
 type LexerCustomAction struct {
@@ -325,7 +325,7 @@ func (l *LexerCustomAction) Equals(other LexerAction) bool {
 // Implements the {@code channel} lexer action by calling
 // {@link Lexer//setChannel} with the assigned channel.
 // Constructs a New{@code channel} action with the specified channel value.
-// @param channel The channel value to pass to {@link Lexer//setChannel}.
+// @paramantlr channel The channel value to pass to {@link Lexer//setChannel}.
 type LexerChannelAction struct {
 	*BaseLexerAction
 
@@ -381,10 +381,10 @@ func (l *LexerChannelAction) String() string {
 // <p>Note: This class is only required for lexer actions for which
 // {@link LexerAction//isPositionDependent} returns {@code true}.</p>
 //
-// @param offset The offset into the input {@link CharStream}, relative to
+// @paramantlr offset The offset into the input {@link CharStream}, relative to
 // the token start index, at which the specified lexer action should be
 // executed.
-// @param action The lexer action to execute at a particular offset in the
+// @paramantlr action The lexer action to execute at a particular offset in the
 // input {@link CharStream}.
 type LexerIndexedCustomAction struct {
 	*BaseLexerAction

@@ -42,11 +42,11 @@ func NewLexerActionExecutor(lexerActions []LexerAction) *LexerActionExecutor {
 // the input {@code lexerActionExecutor} followed by a specified
 // {@code lexerAction}.
 //
-// @param lexerActionExecutor The executor for actions already traversed by
+// @paramantlr lexerActionExecutor The executor for actions already traversed by
 // the lexer while Matching a token within a particular
 // {@link LexerATNConfig}. If this is {@code nil}, the method behaves as
 // though it were an empty executor.
-// @param lexerAction The lexer action to execute after the actions
+// @paramantlr lexerAction The lexer action to execute after the actions
 // specified in {@code lexerActionExecutor}.
 //
 // @return A {@link LexerActionExecutor} for executing the combine actions
@@ -81,7 +81,7 @@ func LexerActionExecutorappend(lexerActionExecutor *LexerActionExecutor, lexerAc
 // <p>If the current executor already has offsets assigned to all
 // position-dependent lexer actions, the method returns {@code this}.</p>
 //
-// @param offset The current offset to assign to all position-dependent
+// @paramantlr offset The current offset to assign to all position-dependent
 // lexer actions which do not already have offsets assigned.
 //
 // @return A {@link LexerActionExecutor} which stores input stream offsets
@@ -119,12 +119,12 @@ func (l *LexerActionExecutor) fixOffsetBeforeMatch(offset int) *LexerActionExecu
 // method returns, the input position will be restored to the same position
 // it was in when the method was invoked.</p>
 //
-// @param lexer The lexer instance.
-// @param input The input stream which is the source for the current token.
+// @paramantlr lexer The lexer instance.
+// @paramantlr input The input stream which is the source for the current token.
 // When l method is called, the current {@link IntStream//index} for
 // {@code input} should be the start of the following token, i.e. 1
 // character past the end of the current token.
-// @param startIndex The token start index. This value may be passed to
+// @paramantlr startIndex The token start index. This value may be passed to
 // {@link IntStream//seek} to set the {@code input} position to the beginning
 // of the token.
 // /
